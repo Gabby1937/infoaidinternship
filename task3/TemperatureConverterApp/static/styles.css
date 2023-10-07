@@ -1,0 +1,29 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+div {
+    margin: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}

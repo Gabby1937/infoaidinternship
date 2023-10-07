@@ -1,0 +1,72 @@
+{% extends "base2.html" %}
+{% block title %} Edit Agent {% endblock %}
+{% block body %}
+    <div class="breadcrumbs">
+        <!-- Breadcrumbs code here -->
+    </div>
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Edit Team</strong>
+                        </div>
+                        <div class="card-body card-block">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                            <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
+                            <form action="{{ url_for('edit_team', team_id=team.id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name-input" class="form-control-label">Name</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="name-input" name="name" placeholder="Name" class="form-control" value="{{ team.name }}" required></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="bio-input" class="form-control-label">Bio</label></div>
+                                    <div class="col-12 col-md-9"><textarea id="bio-input" name="bio" placeholder="Bio" class="form-control" rows="4">{{ team.bio }}</textarea></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="image-input" class="form-control-label">Image</label></div>
+                                    <div class="col-12 col-md-9"><input type="file" id="image-input" name="image" class="form-control-file"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="occupation-input" class="form-control-label">Occupation</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="occupation-input" name="occupation" placeholder="Occupation" class="form-control" value="{{ team.occupation }}" required></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="facebook-input" class="form-control-label">Facebook Link</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="facebook-input" name="facebook_link" placeholder="Facebook Link" class="form-control" value="{{ team.facebook_link }}"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="twitter-input" class="form-control-label">Twitter Link</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="twitter-input" name="twitter_link" placeholder="Twitter Link" class="form-control" value="{{ team.twitter_link }}"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="github-input" class="form-control-label">Github Link</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="github-input" name="github_link" placeholder="Github Link" class="form-control" value="{{ team.github_link }}"></div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" value="submit" class="btn btn-primary btn-sm">
+                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-ban"></i> Reset
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

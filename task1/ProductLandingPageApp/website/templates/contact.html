@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %}Contact us{% endblock %}
+{% block body %}
+{% block header %}
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(static/images/img_bg_2.jpg);">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<div class="display-t">
+					<div class="display-tc animate-box" data-animate-effect="fadeIn">
+						<h1>{% block headername %}Contact Us{% endblock %}</h1>
+						<h2>Free html5 templates by <a href="https://themewagon.com/theme_tag/free/" target="_blank">Themewagon</a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{% endblock %}
+	
+	<div id="fh5co-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-md-push-1 animate-box">
+					
+					<div class="fh5co-contact-info">
+						<h3>Contact Information</h3>
+						<ul>
+							<li class="address">1, Jidiare Drive, <br> GRA Benin City Edo State, Nigeria</li>
+							<li class="phone"><a href="tel://+2348103465605">+ 234 8103465605</a></li>
+							<li class="email"><a href="mailto:gabrieljohnson1937@gmail.com">gabrieljohnson1937@gmail.com</a></li>
+							<li class="url"><a href="https://www.linkedin.com/in/gabriel-johnson-bb4689235/">Check us out</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-md-6 animate-box">
+					<h3>Get In Touch</h3>
+					<form action="{{url_for('contact')}}" method="POST" enctype="multipart/form-data">
+						<div class="row form-group">
+							<div class="col-md-6">
+								<!-- <label for="fname">First Name</label> -->
+								<input type="text" id="fname" class="form-control" name="firstname" placeholder="Your firstname">
+							</div>
+							<div class="col-md-6">
+								<!-- <label for="lname">Last Name</label> -->
+								<input type="text" id="lname" class="form-control" name="lastname" placeholder="Your lastname">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
+								<input type="text" id="email" class="form-control" name="email" placeholder="Your email address">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="subject">Subject</label> -->
+								<input type="text" id="subject" class="form-control" name="subject" placeholder="Your subject of this message">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="message">Message</label> -->
+								<textarea name="content" id="message" cols="30" rows="10" class="form-control"  placeholder="Say something about us"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Send Message" class="btn btn-primary">
+						</div>
+
+					</form>		
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="map" class="animate-box" data-animate-effect="fadeIn"></div>
+
+
+	{% block scripts %}
+	<!-- jQuery -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- Carousel -->
+	<script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{ url_for('static', filename='js/jquery.countTo.js')}}"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="{{ url_for('static', filename='js/google_map.js')}}"></script>
+	<!-- Flexslider -->
+	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js')}}"></script>
+
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	{% endblock scripts %}
+
+
+{% endblock body %}

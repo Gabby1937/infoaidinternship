@@ -1,0 +1,138 @@
+{% extends "base2.html" %}
+{% block title %} Add Product {% endblock %}
+{% block body %}<!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Forms</a></li>
+                                    <li class="active">Basic</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Basic Form</strong> Elements
+                            </div>
+                            <div class="card-body card-block">
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                {% endwith %}
+                                <form action="{{ url_for('add_product') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="name" class="form-control-label">Product name:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="name" name="name" class="form-control" placeholder="Product name" required>
+                                            <small class="form-text text-muted">Name of the Product.</small>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="price" class="form-control-label">Price:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="number" id="price" name="price" class="form-control" step="0.01" required>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="description" class="form-control-label">Description:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea id="description" name="description" class="form-control" rows="5" placeholder="Product description..." required></textarea>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="specification" class="form-control-label">Specification:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea id="specification" name="specification" class="form-control" rows="3" placeholder="Qualities of the product..." required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class="form-control-label">Product Image1:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="image1" name="image1" class="form-control-file">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class="form-control-label">Product Image2:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="image2" name="image2" class="form-control-file">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class="form-control-label">Product Image3:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="image3" name="image3" class="form-control-file">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class="form-control-label">Product Image4:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="image4" name="image4" class="form-control-file">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class="form-control-label">Product Image5:</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="image5" name="image5" class="form-control-file">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="card-footer">
+                                        <button type="submit" value="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+
+            </div>
+
+
+        </div><!-- .animated -->
+        <!-- .content -->
+
+    <div class="clearfix"></div>
+
+    {% endblock %}
